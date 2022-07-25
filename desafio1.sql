@@ -25,6 +25,7 @@ CREATE TABLE SpotifyClone.artists(
 CREATE TABLE SpotifyClone.user_following_artist(
     user_id INT NOT NULL,
     artist_id INT NOT NULL,
+    PRIMARY KEY (user_id, artist_id),
     FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(user_id),
     FOREIGN KEY (artist_id) REFERENCES SpotifyClone.artists(artist_id)
 );
@@ -49,6 +50,7 @@ CREATE TABLE SpotifyClone.user_reproduction_history_songs(
     user_id INT NOT NULL,
     date TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
     song_id INT NOT NULL,
+    PRIMARY KEY (user_id, song_id),
     FOREIGN KEY (user_id) REFERENCES SpotifyClone.users(user_id),
     FOREIGN KEY (song_id) REFERENCES SpotifyClone.songs(song_id)
 );
