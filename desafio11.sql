@@ -7,4 +7,5 @@ SELECT name 'nome_musica',
       WHEN name LIKE '%Circus%' THEN REPLACE(name, 'Circus', 'Pull Request')
     END 'novo_nome'
 FROM SpotifyClone.songs
-WHERE song_id in (3, 18, 4, 15, 6);
+WHERE song_id in (3, 18, 4, 15, 6)
+ORDER BY nome_musica;
